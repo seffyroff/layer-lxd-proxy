@@ -1,0 +1,10 @@
+forward-traffic: 
+  description: Forward traffic from host to container
+  params:
+    host:
+      type: string
+      description: The ip address of the lxd to port forward to.
+    port:
+      type: integer
+      description: The port to forward
+  required: [host,port]

@@ -1,0 +1,4 @@
+includes:
+  - 'layer:basic'
+repo: 'http://github.com/jamesbeedy/lxd-proxy.git'
+
