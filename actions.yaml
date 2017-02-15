@@ -4,7 +4,10 @@ forward-traffic:
     host:
       type: string
       description: The ip address of the lxd to port forward to.
-    port:
+    source-port:
       type: integer
       description: The port to forward
-  required: [host,port]
+    dest-port:
+      type: integer
+      description: The port to forward
+  required: [host,source-port,dest-port]

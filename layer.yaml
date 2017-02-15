@@ -1,4 +1,8 @@
 includes:
   - 'layer:basic'
+options:
+  basic:
+    packages:
+      - 'iptables-persistent'
 repo: 'http://github.com/jamesbeedy/lxd-proxy.git'
 

@@ -21,11 +21,15 @@ from charms.layer.lxd_proxy import (
 if __name__ == "__main__":
 
     host_port = {'host': action_get('host'),
-                 'port': str(action_get('port'))}
+                 'source_port': str(action_get('source-port')),
+                 'dest_port': str(action_get('dest-port'))}
 
     status_set('maintenance',
-               "Forwarding port: {port} to {host}:{port}".format(**host_port))
+               "Forwarding port: {source_port} to {host}:{dest_port}".format(**host_port))
 
-    save_ip_tables(host_port['host'], host_port['port'])
+    save_ip_tables(host_port['host'], source_port=host_port['source_port'],
+                   dest_port=host_port['dest_port'])
 
-    status_set('active', "Forwarding complete")
+    status_set('active',
+               ("Forwarding complete {source_port} -> "
+                "{host}:{dest_port}").format(**host_port))
