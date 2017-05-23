@@ -11,3 +11,16 @@ forward-traffic:
       type: integer
       description: The port to forward
   required: [host,source-port,dest-port]
+remove-rule: 
+  description: Remove iptables nat forwarding rule
+  params:
+    host:
+      type: string
+      description: The ip address of the lxd to port forward to.
+    source-port:
+      type: integer
+      description: The port to forward
+    dest-port:
+      type: integer
+      description: The port to forward
+  required: [host,source-port,dest-port]

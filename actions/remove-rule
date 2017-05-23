@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+HOST=$(action-get host)
+SOURCE_PORT=$(action-get source-port)
+DEST_PORT=$(action-get dest-port)
+
+iptables -t nat -D PREROUTING `iptables -t nat -v -L PREROUTING -n --line-number | grep $SOURCE_PORT | grep $HOST | grep $DEST_PORT | awk '{print $1}'`
