@@ -12,7 +12,11 @@ This charm exposes the action `forward-traffic` which accepts two input argument
 
 Example Usage
 ```bash
-$ juju run-action lxd-proxy/0 forward-traffic host=10.0.0.119 port=9200
+# Add Rule
+$ juju run-action lxd-proxy/0 forward-traffic source-port=9000 dest-port=9200 host=10.0.0.119
+
+# Remove Rule
+$ juju run-action lxd-proxy/0 remove-rule source-port=9000 dest-port=9200 host=10.0.0.119
 ```
 
 #### Copyright
