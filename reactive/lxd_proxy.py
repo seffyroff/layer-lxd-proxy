@@ -1,4 +1,3 @@
-from subprocess import call
 from charms.reactive import when_not, set_state, when
 from charmhelpers.core.hookenv import status_set
 
